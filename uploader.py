@@ -1,4 +1,4 @@
-import sys, dropbox
+import dropbox
 
 from decouple import config
 
