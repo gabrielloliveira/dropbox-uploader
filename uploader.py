@@ -1,3 +1,5 @@
+import sys
+import getopt
 import dropbox
 
 from decouple import config
@@ -16,15 +18,28 @@ class TransferData:
             dbx.files_upload(f.read(), file_to)
 
 
-def main():
+def main(argv):
+    file_from = ''
+    file_to = ''
+    try:
+        opts, args = getopt.getopt(argv,"hf:d:",["file=","directory="])
+    except getopt.GetoptError:
+        print('uploader.py -f <file_name> -d <dropbox_directory>')
+        sys.exit(2)
+    for opt, arg in opts:
+        if opt == '-h':
+            print('uploader.py -f <file_name> -d <dropbox_directory>')
+            sys.exit()
+        elif opt in ("-f", "--file"):
+            file_from = arg
+        elif opt in ("-d", "--directory"):
+            file_to = arg
+    
     access_token = config('ACCESS_TOKEN')
     transferData = TransferData(access_token)
-
-    file_from = 'teste.txt'
-    file_to = f'/postgres/{file_from}'
 
     transferData.upload_file(file_from, file_to)
 
 
 if __name__ == '__main__':
-    main()
+    main(sys.argv[1:])
