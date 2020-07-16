@@ -133,5 +133,3 @@ dmypy.json
 .pytype/
 
 .vscode/
-
-*.txt
