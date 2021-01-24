@@ -17,6 +17,8 @@ pip install -r requirements.txt
 ```
 
 * Add your ACCESS_TOKEN API.
+* Add your DEFAULT_DROPBOX_DIRECTORY
+* Add your DEFAULT_SQL_DIRECTORY (folder where backups.sql are stored)
 
 ## Usage
 
@@ -25,7 +27,7 @@ pip install -r requirements.txt
 ```console
 python uploader.py -f <FILE NAME> -d <DROPBOX DIRECTORY>
 ```
-
-## Limitation
-
-For now dropbox-uploader sends only individual files that are in the same folder as the uploader
+or
+```console
+python uploader.py
+```
