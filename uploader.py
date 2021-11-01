@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import argparse
-import getopt
 import glob
 import os
 import sys
