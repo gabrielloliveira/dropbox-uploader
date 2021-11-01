@@ -18,7 +18,7 @@ pip install -r requirements.txt
 
 * Add your ACCESS_TOKEN API.
 * Add your DEFAULT_DROPBOX_DIRECTORY
-* Add your DEFAULT_SQL_DIRECTORY (folder where backups.sql are stored)
+* Add your DEFAULT_BACKUPS_DIRECTORY (folder where backups.sql or *.sql.gz are stored)
 
 ## Usage
 
